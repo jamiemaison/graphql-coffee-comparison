@@ -12,9 +12,6 @@ const MainNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(MainNavigator);
 
-export const AppContext = React.createContext({ data: 0 });
-
-
 export default class App extends React.Component {
   constructor(props) {
     super(props);
