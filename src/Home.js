@@ -1,32 +1,26 @@
 import * as React from 'react';
 import { StyleSheet, View, Image, Text, FlatList, TouchableOpacity, Dimensions } from 'react-native';
-import { AppContext } from '../App';
 
 export class Home extends React.Component {
   render() {
     return (
-      <AppContext.Consumer>
-        {
-          (context) =>
-            <View style={styles.container}>
-              <Image style={styles.header} source={require('../assets/header.png')} />
-              <View style={{ marginLeft: 30, marginTop: 30 }}>
-                <Text style={styles.title}>COFFEE</Text>
-                <Text style={styles.subtitle}>SELECTION</Text>
-              </View>
-              <FlatList
-                style={styles.list}
-                data={context}
-                renderItem={({ item }) => <TouchableOpacity style={styles.block} onPress={() => this.props.navigation.navigate('CoffeePage', { item: item })}>
-                  <Image style={styles.productImage} source={{ uri: item.productImage }} />
-                  <Text style={styles.name}>{item.name}</Text>
-                  <Text style={styles.price}>{item.price}</Text>
-                </TouchableOpacity>}
-                numColumns={2}
-              />
-            </View>
-        }
-      </AppContext.Consumer>
+      <View style={styles.container}>
+        <Image style={styles.header} source={require('../assets/header.png')} />
+        <View style={{ marginLeft: 30, marginTop: 30 }}>
+          <Text style={styles.title}>COFFEE</Text>
+          <Text style={styles.subtitle}>SELECTION</Text>
+        </View>
+        <FlatList
+          style={styles.list}
+          data={[{"key": "placeholder", "name": "PLACEHOLDER", "price": "$0.00", "blend": "PLACEHOLDER", "color": "#D0D0D0", "productImage": "https://github.com/jamiemaison/hosted/raw/master/blend-placeholder.png"},{"key": "placeholder", "name": "PLACEHOLDER", "price": "$0.00", "blend": "PLACEHOLDER", "color": "#D0D0D0", "productImage": "https://github.com/jamiemaison/hosted/raw/master/blend-placeholder.png"}]}
+          renderItem={({ item }) => <TouchableOpacity style={styles.block} onPress={() => this.props.navigation.navigate('CoffeePage', { item: item })}>
+            <Image style={styles.productImage} source={{ uri: item.productImage }} />
+            <Text style={styles.name}>{item.name}</Text>
+            <Text style={styles.price}>{item.price}</Text>
+          </TouchableOpacity>}
+          numColumns={2}
+        />
+      </View>
     );
   }
 }
