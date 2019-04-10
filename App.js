@@ -39,13 +39,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isFontsLoaded: false,
-      data: [
-        { key: 'graphql-blend', name: 'GRAPHQL BLEND', price: '$2.99', blend: 'RICH', color: '#ef9431', productImage: 'https://github.com/jamiemaison/hosted/raw/master/graphql-blend.png' },
-        { key: 'react-native-intense', name: 'REACT NATIVE INTENSE', price: '$5.99', color: '#2c2c2d', blend: 'BOLD', productImage: 'https://github.com/jamiemaison/hosted/raw/master/react-native-intense.png' },
-        { key: 'javascript-single', name: 'JAVASCRIPT SINGLE ORIGIN', price: '$1.50', color: '#1c2941', blend: 'SMOOTH', productImage: 'https://github.com/jamiemaison/hosted/raw/master/javascript-single.png' },
-        { key: 'react-roast', name: 'REACT ROAST', price: '$3.79', blend: 'SWEET', color: '#f6eae4', productImage: 'https://github.com/jamiemaison/hosted/raw/master/react-roast.png' },
-      ]
+      isFontsLoaded: false
     };
   }
 
