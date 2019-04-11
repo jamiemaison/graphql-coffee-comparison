@@ -32,7 +32,7 @@ const MainNavigator = createStackNavigator({
 
 const AppContainer = createAppContainer(MainNavigator);
 
-export const AppContext = React.createContext({ data: 0 });
+export const AppContext = React.createContext({ data: { coffee: { beans: [] } } });
 
 
 export default class App extends React.Component {
